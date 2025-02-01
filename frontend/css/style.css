@@ -4,6 +4,14 @@ body {
   font-family: Arial, sans-serif;
   font-size: large;
   font-weight: bold;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .nav-bar {
@@ -21,4 +29,95 @@ body {
 
 .nav-bar .nav-list a {
   text-decoration: none;
+  color: inherit;
+}
+
+/* Aplica flexbox no container */
+.carousel-container {
+  margin-top: 100px;            /* Espaçamento acima do carousel */
+  display: flex;               /* Alinha os itens lado a lado */
+  justify-content: center;     /* Centraliza os itens (opcional, pode remover se não precisar) */
+  gap: 10px;                   /* Espaçamento entre as imagens */
+  overflow-x: auto;            /* Impede que as imagens saiam da área visível (se necessário) */
+  scroll-snap-type: x mandatory; /* Faz com que o scroll pare em cada imagem */
+  
+}
+
+/* Configura o tamanho das imagens */
+.carousel-item img {   
+  width: 100%;                 /* Faz com que a imagem ocupe 100% do tamanho do item */
+  height: auto;                /* Mantém a proporção das imagens */
+}
+
+/* Opcional: você pode adicionar mais personalizações */
+.carousel-item {
+  flex-shrink: 0;              /* Impede que o item encolha, caso contrário as imagens podem se sobrepor */
+  width: 200px;                /* Ajuste o tamanho do item (e das imagens) conforme necessário */
+  border: none;     /* Opcional: para visualizar as bordas dos itens */
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #3a00a5;
+
+}
+
+/* Oculta a barra de rolagem horizontal */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  margin-bottom: 20px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
 }
