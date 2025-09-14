@@ -1,0 +1,33 @@
+{
+  "name": "box-office",
+  "version": "1.0.0",
+  "description": "Sistema de bilheteria de cinema - Projeto Program Beginners",
+  "main": "backend/app.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "dev": "nodemon backend/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cinema", "bilheteria", "tickets", "movies"],
+  "authors": [
+    "Abner de Souza",
+    "Andrey Marques", 
+    "Arthur Romanovas",
+    "Fernando Martins",
+    "Mateus Rafael"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "mysql2": "^3.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

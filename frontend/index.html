@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="/frontend/css/style.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/frontend/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Box-Office</title>
 </head>
 
@@ -15,20 +14,19 @@
         <nav class="nav-bar">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <!-- Substituir futuramente pelo logo da aplicação -->
-                    <a href="#" class="nav-link">Tela Inicial</a>
+                    <a href="index.html" class="nav-link">Tela Inicial</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Filmes</a>
+                    <a href="pages/movies.html" class="nav-link">Filmes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Em Breve</a>
+                    <a href="pages/coming_soon.html" class="nav-link">Em Breve</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Cinemas</a>
+                    <a href="pages/cinemas.html" class="nav-link">Cinemas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Promoções</a>
+                    <a href="pages/promotions.html" class="nav-link">Promoções</a>
                 </li>
                 <!-- Barra de Pesquisa -->
                 <li class="nav-item">
@@ -38,8 +36,7 @@
                     </form>
                 </li>
                 <li class="nav-item">
-                    <!-- Substituir futuramente pelo ícone de personagem -->
-                    <a href="#" class="nav-link">Minha Conta</a>
+                    <a href="pages/my_account.html" class="nav-link">Minha Conta</a>
                 </li>
             </ul>
         </nav>
@@ -50,43 +47,46 @@
         <main>
             <!-- Carrossel de Filmes -->
             <section class="carousel">
-                <div class="carousel-container">
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>Vingadores</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>Sonic</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>Mario</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>Titanic</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>2025</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>Barbie</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/frontend/img/gato-calvo.webp" alt="Avengers">
-                        <h3>Zé da Manga</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam></p>
+                <div class="carousel-wrapper">
+                    <div class="carousel-container">
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="Vingadores">
+                            <h3>Vingadores</h3>
+                            <p>Uma aventura épica dos super-heróis mais poderosos da Terra unidos para salvar o mundo.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="Sonic">
+                            <h3>Sonic</h3>
+                            <p>O ouriço azul mais rápido do mundo em uma aventura cheia de velocidade e diversão.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="Mario">
+                            <h3>Super Mario Bros</h3>
+                            <p>Os irmãos encanadores embarcam em uma jornada incrível no Reino dos Cogumelos.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="Titanic">
+                            <h3>Titanic</h3>
+                            <p>Uma história de amor inesquecível a bordo do navio mais famoso da história.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="2025">
+                            <h3>2025</h3>
+                            <p>Uma visão futurista que explora os desafios e possibilidades do amanhã.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="Barbie">
+                            <h3>Barbie</h3>
+                            <p>A boneca mais famosa do mundo ganha vida em uma aventura colorida e divertida.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/gato-calvo.webp" alt="Zé da Manga">
+                            <h3>Zé da Manga</h3>
+                            <p>Uma comédia brasileira cheia de humor e situações hilárias.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
         </main>
     </div>
 
@@ -133,6 +133,8 @@
         </div>
       </footer>
       
+    <!-- Scripts JavaScript -->
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>

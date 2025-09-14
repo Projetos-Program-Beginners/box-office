@@ -32,38 +32,209 @@ body {
   color: inherit;
 }
 
-/* Aplica flexbox no container */
+/* === CAROUSEL STYLES === */
+.carousel {
+  position: relative;
+  margin-top: 100px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(58, 0, 165, 0.3);
+}
+
+/* Container principal do carousel */
 .carousel-container {
-  margin-top: 100px;            /* Espaçamento acima do carousel */
-  display: flex;               /* Alinha os itens lado a lado */
-  justify-content: center;     /* Centraliza os itens (opcional, pode remover se não precisar) */
-  gap: 10px;                   /* Espaçamento entre as imagens */
-  overflow-x: auto;            /* Impede que as imagens saiam da área visível (se necessário) */
-  scroll-snap-type: x mandatory; /* Faz com que o scroll pare em cada imagem */
-  
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Configura o tamanho dos itens */
+.carousel-item {
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(135deg, #1a0033 0%, #3a00a5 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
 }
 
 /* Configura o tamanho das imagens */
 .carousel-item img {   
-  width: 100%;                 /* Faz com que a imagem ocupe 100% do tamanho do item */
-  height: auto;                /* Mantém a proporção das imagens */
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
 }
 
-/* Opcional: você pode adicionar mais personalizações */
-.carousel-item {
-  flex-shrink: 0;              /* Impede que o item encolha, caso contrário as imagens podem se sobrepor */
-  width: 200px;                /* Ajuste o tamanho do item (e das imagens) conforme necessário */
-  border: none;     /* Opcional: para visualizar as bordas dos itens */
-  text-align: center;
+.carousel-item:hover img {
+  transform: scale(1.05);
+}
+
+.carousel-item h3 {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.carousel-item p {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  max-width: 80%;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  line-height: 1.4;
+}
+
+/* Overlay escuro para melhor legibilidade do texto */
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* === CAROUSEL CONTROLS === */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(58, 0, 165, 0.8);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
   cursor: pointer;
-  text-decoration: none;
-  color: #3a00a5;
-
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
 }
 
-/* Oculta a barra de rolagem horizontal */
-.carousel-container::-webkit-scrollbar {
-  display: none;
+.carousel-btn:hover {
+  background: rgba(58, 0, 165, 1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(58, 0, 165, 0.4);
+}
+
+.carousel-btn-prev {
+  left: 20px;
+}
+
+.carousel-btn-next {
+  right: 20px;
+}
+
+/* === CAROUSEL INDICATORS === */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #3a00a5;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator:hover {
+  background: rgba(58, 0, 165, 0.5);
+  transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+  background: #3a00a5;
+  box-shadow: 0 0 10px rgba(58, 0, 165, 0.6);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .carousel {
+    margin-top: 60px;
+    padding: 0 10px;
+  }
+
+  .carousel-item h3 {
+    font-size: 1.5rem;
+    bottom: 60px;
+  }
+
+  .carousel-item p {
+    font-size: 0.9rem;
+    bottom: 15px;
+    max-width: 90%;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .carousel-btn-prev {
+    left: 10px;
+  }
+
+  .carousel-btn-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item h3 {
+    font-size: 1.2rem;
+    bottom: 50px;
+  }
+
+  .carousel-item p {
+    font-size: 0.8rem;
+    bottom: 10px;
+  }
+
+  .carousel-item img {
+    height: 250px;
+  }
 }
 
 
